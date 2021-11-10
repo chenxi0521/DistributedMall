@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dongyimai-eureka" />
+        <module name="dongyimai-sellergoods-service-api" />
+        <module name="dongyimai-common" />
+        <module name="dongyimai-common-db" />
+        <module name="dongyimai-sellergoods-service" />
+        <module name="dongyimai-file-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dongyimai-common" options="-parameters" />
+      <module name="dongyimai-common-db" options="-parameters" />
+      <module name="dongyimai-eureka" options="-parameters" />
+      <module name="dongyimai-file-service" options="-parameters" />
+      <module name="dongyimai-gateway" options="-parameters" />
+      <module name="dongyimai-sellergoods-service" options="-parameters" />
+      <module name="dongyimai-sellergoods-service-api" options="-parameters" />
+      <module name="dongyimai-service" options="-parameters" />
+      <module name="dongyimai-service-api" options="-parameters" />
+      <module name="dongyimai-web" options="-parameters" />
+    </option>
+  </component>
+</project>
