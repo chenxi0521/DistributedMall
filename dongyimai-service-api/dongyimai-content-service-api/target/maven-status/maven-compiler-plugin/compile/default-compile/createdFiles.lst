@@ -1,0 +1,4 @@
+com\offcn\content\feign\ContentCategoryFeign.class
+com\offcn\content\pojo\Content.class
+com\offcn\content\feign\ContentFeign.class
+com\offcn\content\pojo\ContentCategory.class

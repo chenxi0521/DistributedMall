@@ -23,7 +23,7 @@ public class Test {
 
         StorageClient storageClient = new StorageClient(connection,null);
 
-        String[] strings = storageClient.upload_file("C:\\Users\\chenxi\\Desktop\\1.jpg", "jpg", null);
+        String[] strings = storageClient.upload_file("C:\\Users\\chenxi\\Desktop\\3.jpg", "jpg", null);
 
         for (String string : strings) {
             System.out.println(string);

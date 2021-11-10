@@ -12,6 +12,8 @@
     <modules>
         <module>dongyimai-sellergoods-service</module>
         <module>dongyimai-file-service</module>
+        <module>dongyimai-canal-service</module>
+        <module>dongyimai-content-service</module>
     </modules>
 
     <artifactId>dongyimai-service</artifactId>

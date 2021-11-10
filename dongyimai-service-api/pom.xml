@@ -11,6 +11,7 @@
 
     <modules>
         <module>dongyimai-sellergoods-service-api</module>
+        <module>dongyimai-content-service-api</module>
     </modules>
 
     <artifactId>dongyimai-service-api</artifactId>
