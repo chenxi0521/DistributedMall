@@ -11,6 +11,7 @@
         <module>dongyimai-eureka</module>
         <module>dongyimai-common</module>
         <module>dongyimai-common-db</module>
+        <module>dongyimai-service</module>
     </modules>
 
     <parent>

@@ -144,4 +144,16 @@ public class ItemController {
         List<Item> list = itemService.findAll();
         return new Result<List<Item>>(true, StatusCode.OK,"查询成功",list) ;
     }
+
+    /**
+     * 根据状态查询Item数据
+     * @return
+     */
+    @ApiOperation(value = "根据状态查询Item数据",notes = "根据状态查询Item数据",tags = {"ItemController"})
+    @GetMapping("/status/{status}")
+    public Result<List<Item>> findByStatus(@PathVariable(name = "status") String status){
+        //调用ItemService实现查询所有Item
+        List<Item> list = itemService.findByStatus(status);
+        return new Result<List<Item>>(true, StatusCode.OK,"查询成功",list) ;
+    }
 }

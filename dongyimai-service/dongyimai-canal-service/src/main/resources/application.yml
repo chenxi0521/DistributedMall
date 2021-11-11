@@ -14,7 +14,7 @@ eureka:
     prefer-ip-address: true
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 #hystrix 配置
 hystrix:
   command:
