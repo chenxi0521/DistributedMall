@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dongyimai-search-service-api" />
+        <module name="dongyimai-itempage-service" />
         <module name="dongyimai-eureka" />
         <module name="dongyimai-canal-service" />
         <module name="dongyimai-content-service" />
@@ -29,6 +30,7 @@
       <module name="dongyimai-eureka" options="-parameters" />
       <module name="dongyimai-file-service" options="-parameters" />
       <module name="dongyimai-gateway" options="-parameters" />
+      <module name="dongyimai-itempage-service" options="-parameters" />
       <module name="dongyimai-search-service" options="-parameters" />
       <module name="dongyimai-search-service-api" options="-parameters" />
       <module name="dongyimai-sellergoods-service" options="-parameters" />

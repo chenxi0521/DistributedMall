@@ -21,7 +21,7 @@ public class SkuInfo implements Serializable {
     @Id
     private Long id;
 
-    @Field(type = FieldType.Text,analyzer = "ik_smart")
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String title;
 
 
