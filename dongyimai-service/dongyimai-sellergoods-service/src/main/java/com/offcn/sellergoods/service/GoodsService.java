@@ -57,7 +57,7 @@ public interface GoodsService extends IService<Goods> {
      * @param id
      * @return
      */
-     Goods findById(Long id);
+    GoodsEntity findById(Long id);
 
     /***
      * 查询所有Goods

@@ -247,8 +247,17 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
      * @return
      */
     @Override
-    public Goods findById(Long id) {
-        return this.getById(id);
+    public GoodsEntity findById(Long id) {
+        GoodsEntity goodsEntity = new GoodsEntity();
+        Goods goods = this.getById(id);
+        GoodsDesc goodsDesc = goodsDescMapper.selectById(id);
+        QueryWrapper<Item> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("goods_id", id);
+        List<Item> items = itemMapper.selectList(queryWrapper);
+        goodsEntity.setGoods(goods);
+        goodsEntity.setGoodsDesc(goodsDesc);
+        goodsEntity.setItemList(items);
+        return goodsEntity;
     }
 
     /**

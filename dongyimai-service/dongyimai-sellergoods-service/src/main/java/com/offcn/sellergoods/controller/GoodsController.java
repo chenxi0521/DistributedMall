@@ -119,10 +119,10 @@ public class GoodsController {
     @ApiOperation(value = "Goods根据ID查询", notes = "根据ID查询Goods方法详情", tags = {"GoodsController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Long")
     @GetMapping("/{id}")
-    public Result<Goods> findById(@PathVariable Long id) {
+    public Result<GoodsEntity> findById(@PathVariable Long id) {
         //调用GoodsService实现根据主键查询Goods
-        Goods goods = goodsService.findById(id);
-        return new Result<Goods>(true, StatusCode.OK, "查询成功", goods);
+        GoodsEntity goodsEntity = goodsService.findById(id);
+        return new Result<GoodsEntity>(true, StatusCode.OK, "查询成功", goodsEntity);
     }
 
     /**
