@@ -5,11 +5,14 @@ import com.alibaba.otter.canal.protocol.CanalEntry;
 import com.offcn.content.feign.ContentFeign;
 import com.offcn.content.pojo.Content;
 import com.offcn.entity.Result;
+import com.offcn.itempage.feign.PageFeign;
 import com.xpand.starter.canal.annotation.CanalEventListener;
 import com.xpand.starter.canal.annotation.ListenPoint;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -23,8 +26,12 @@ public class CanalDataEventListener {
     @Autowired
     private ContentFeign contentFeign;
 
+
+
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+
 
     //自定义数据库的 操作来监听
     //destination = "example"

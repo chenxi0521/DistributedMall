@@ -1,6 +1,5 @@
-package com.offcn.canal;
+package com.offcn.itempage;
 
-import com.xpand.starter.canal.annotation.EnableCanalClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -9,15 +8,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author chenxi
- * @date 2021/11/10 19:11
+ * @date 2021/11/12 15:46
  * @description
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableEurekaClient
-@EnableCanalClient
-@EnableFeignClients(basePackages = {"com.offcn.content.feign","com.offcn.itempage.feign"})
-public class CanalApp {
+@EnableFeignClients(value = "com.offcn.sellergoods.feign")
+public class ItemPageApp {
     public static void main(String[] args) {
-        SpringApplication.run(CanalApp.class, args);
+        SpringApplication.run(ItemPageApp.class, args);
     }
 }

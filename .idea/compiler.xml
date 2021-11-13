@@ -13,6 +13,7 @@
         <module name="dongyimai-content-service" />
         <module name="dongyimai-search-service" />
         <module name="dongyimai-common" />
+        <module name="dongyimai-itempage-service-api" />
         <module name="dongyimai-common-db" />
         <module name="dongyimai-sellergoods-service" />
         <module name="dongyimai-file-service" />
@@ -31,6 +32,7 @@
       <module name="dongyimai-file-service" options="-parameters" />
       <module name="dongyimai-gateway" options="-parameters" />
       <module name="dongyimai-itempage-service" options="-parameters" />
+      <module name="dongyimai-itempage-service-api" options="-parameters" />
       <module name="dongyimai-search-service" options="-parameters" />
       <module name="dongyimai-search-service-api" options="-parameters" />
       <module name="dongyimai-sellergoods-service" options="-parameters" />

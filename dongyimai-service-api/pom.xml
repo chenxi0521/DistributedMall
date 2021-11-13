@@ -13,6 +13,7 @@
         <module>dongyimai-sellergoods-service-api</module>
         <module>dongyimai-content-service-api</module>
         <module>dongyimai-search-service-api</module>
+        <module>dongyimai-itempage-service-api</module>
     </modules>
 
     <artifactId>dongyimai-service-api</artifactId>
