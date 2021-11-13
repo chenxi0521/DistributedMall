@@ -14,7 +14,7 @@ eureka:
     prefer-ip-address: true
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 #hystrix 配置
 hystrix:
   command:
@@ -25,6 +25,7 @@ hystrix:
           enabled: true
         isolation:
           strategy: SEMAPHORE
+
 #canal配置
 canal:
   client:
@@ -32,3 +33,7 @@ canal:
       example:
         host: 192.168.1.200
         port: 11111
+
+
+# 静态页的位置
+pagepath: D:\develop\data\dongyimai-parent\items
