@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,10 @@ public class BrandController {
     private BrandService brandService;
 
     @GetMapping
-    public Result<List> findAllBrands(){
+    public Result<List> findAllBrands(HttpServletRequest request){
+
+        String authorization = request.getHeader("Authorization");
+        System.out.println(authorization);
 
         try {
             List<Brand> allBrands = brandService.findAllBrands();

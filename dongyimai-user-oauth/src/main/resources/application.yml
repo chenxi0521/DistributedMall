@@ -1,0 +1,21 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: user-auth
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+encrypt:
+  key-store:
+    location: classpath:dongyimai.jks  #秘钥文件名
+    alias: dongyimai  #别名
+    password: dongyimai  #密码
+    secret: dongyimai   #密钥库的访问密码
+auth:
+  ttl: 3600  #token过期时间
+  clientId: root  #客户端id
+  clientSecret: root #客户端密码
+  cookieDomain: localhost #cookie域名
+  cookieMaxAge: -1     #cookie有效期

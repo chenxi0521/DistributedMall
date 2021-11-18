@@ -6,16 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dongyimai-sms-service" />
+        <module name="dongyimai-user-service" />
         <module name="dongyimai-search-service-api" />
-        <module name="dongyimai-itempage-service" />
+        <module name="dongyimai-gateway-web" />
         <module name="dongyimai-eureka" />
+        <module name="dongyimai-itempage-service-api" />
+        <module name="dongyimai-sellergoods-service" />
+        <module name="dongyimai-user-service-api" />
+        <module name="dongyimai-user-oauth" />
+        <module name="dongyimai-itempage-service" />
         <module name="dongyimai-canal-service" />
         <module name="dongyimai-content-service" />
         <module name="dongyimai-search-service" />
         <module name="dongyimai-common" />
-        <module name="dongyimai-itempage-service-api" />
         <module name="dongyimai-common-db" />
-        <module name="dongyimai-sellergoods-service" />
         <module name="dongyimai-file-service" />
         <module name="dongyimai-content-service-api" />
       </profile>
@@ -31,6 +36,7 @@
       <module name="dongyimai-eureka" options="-parameters" />
       <module name="dongyimai-file-service" options="-parameters" />
       <module name="dongyimai-gateway" options="-parameters" />
+      <module name="dongyimai-gateway-web" options="-parameters" />
       <module name="dongyimai-itempage-service" options="-parameters" />
       <module name="dongyimai-itempage-service-api" options="-parameters" />
       <module name="dongyimai-search-service" options="-parameters" />
@@ -39,6 +45,10 @@
       <module name="dongyimai-sellergoods-service-api" options="-parameters" />
       <module name="dongyimai-service" options="-parameters" />
       <module name="dongyimai-service-api" options="-parameters" />
+      <module name="dongyimai-sms-service" options="-parameters" />
+      <module name="dongyimai-user-oauth" options="-parameters" />
+      <module name="dongyimai-user-service" options="-parameters" />
+      <module name="dongyimai-user-service-api" options="-parameters" />
       <module name="dongyimai-web" options="-parameters" />
     </option>
   </component>

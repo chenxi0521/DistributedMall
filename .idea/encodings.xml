@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/dongyimai-common-db/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dongyimai-gateway/dongyimai-gateway-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service-api/dongyimai-content-service-api/src/main/java" charset="UTF-8" />
@@ -11,12 +12,16 @@
     <file url="file://$PROJECT_DIR$/dongyimai-service-api/dongyimai-search-service-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service-api/dongyimai-sellergoods-service-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service-api/dongyimai-sellergoods-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dongyimai-service-api/dongyimai-user-service-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-canal-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-content-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-file-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-itempage-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-search-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-sellergoods-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-sms-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dongyimai-service/dongyimai-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dongyimai-user-oauth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dongyimai-web/src/main/resources" charset="UTF-8" />
   </component>
