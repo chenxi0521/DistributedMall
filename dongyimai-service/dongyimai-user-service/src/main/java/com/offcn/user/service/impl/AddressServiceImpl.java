@@ -170,4 +170,12 @@ public class AddressServiceImpl extends ServiceImpl<AddressMapper, Address> impl
     public List<Address> findAll() {
         return this.list(new QueryWrapper<Address>());
     }
+
+    @Override
+    public List<Address> findListByUserId(String userId) {
+        QueryWrapper<Address> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", userId);
+        List<Address> addressList = this.list(queryWrapper);
+        return addressList;
+    }
 }

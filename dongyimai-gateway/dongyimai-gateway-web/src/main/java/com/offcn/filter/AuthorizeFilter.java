@@ -1,7 +1,5 @@
 package com.offcn.filter;
 
-import com.offcn.utils.JwtUtil;
-import io.jsonwebtoken.Claims;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -42,19 +40,24 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
 
         if (StringUtils.isEmpty(token)){
             token = request.getQueryParams().getFirst(AUTHORIZE_TOKEN);
+            if (StringUtils.isEmpty(token)){
+                HttpCookie cookie = request.getCookies().getFirst(AUTHORIZE_TOKEN);
+                if (cookie == null){
+                    response.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED);
+                    return response.setComplete();
+                }
+                token = cookie.getValue();
+            }
         }
 
 
-        HttpCookie cookie = request.getCookies().getFirst(AUTHORIZE_TOKEN);
-        if (cookie == null){
-            response.setStatusCode(HttpStatus.METHOD_NOT_ALLOWED);
-            return response.setComplete();
-        }
-        token = cookie.getValue();
+
 
         try {
-            Claims claims = JwtUtil.parseJWT(token);
-            request.mutate().header(AUTHORIZE_TOKEN, claims.toString());
+            if (!token.startsWith("Bearer ") && !token.startsWith("bearer ")){
+                token = "bearer "+token;
+            }
+            request.mutate().header(AUTHORIZE_TOKEN, token);
             return chain.filter(exchange);
         } catch (Exception e) {
             e.printStackTrace();

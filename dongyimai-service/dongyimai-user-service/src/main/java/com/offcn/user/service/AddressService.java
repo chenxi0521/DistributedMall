@@ -68,4 +68,10 @@ public interface AddressService extends IService<Address> {
      * @return
      */
     List<Address> findAll();
+    /**
+     * 根据用户查询地址
+     * @param userId
+     * @return
+     */
+    public List<Address> findListByUserId(String userId);
 }

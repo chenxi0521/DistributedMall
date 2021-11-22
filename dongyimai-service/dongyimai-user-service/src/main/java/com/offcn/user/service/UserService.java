@@ -80,4 +80,7 @@ public interface UserService extends IService<User> {
 
 
     User findUserByUsername(String username);
+
+
+    void addPoints(String userName, Integer points);
 }

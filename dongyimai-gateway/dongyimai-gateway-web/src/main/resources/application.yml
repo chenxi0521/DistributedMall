@@ -25,6 +25,12 @@ spring:
             - Path=/api/brand/**,/api/goods/**
           filters:
             - StripPrefix=1
+        - id: order_route
+          uri: lb://dym-order
+          predicates:
+            - Path=/api/cart/**,/api/order/**,/api/orderItem/**
+          filters:
+            - StripPrefix=1
 
 server:
   port: 8001

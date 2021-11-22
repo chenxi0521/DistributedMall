@@ -15,6 +15,7 @@
         <module>dongyimai-search-service-api</module>
         <module>dongyimai-itempage-service-api</module>
         <module>dongyimai-user-service-api</module>
+        <module>dongyimai-order-service-api</module>
     </modules>
 
     <artifactId>dongyimai-service-api</artifactId>

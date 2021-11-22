@@ -7,7 +7,7 @@ import com.offcn.user.pojo.User;
 import com.offcn.user.service.UserService;
 import com.offcn.utils.JwtUtil;
 import com.offcn.utils.PhoneFormatCheckUtils;
-import org.mybatis.spring.annotation.MapperScan;
+import com.offcn.utils.TokenDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -25,12 +25,16 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/user")
-@MapperScan("com.offcn.user.dao")
 public class UserController {
 
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    TokenDecode tokenDecode;
+
+
 
 
     @GetMapping("/sendCode/{phone}")
@@ -101,6 +105,32 @@ public class UserController {
     }
 
 
+    @GetMapping("/findUserByUserName/{username}")
+    public Result<User> findUserByUserName(@PathVariable("username") String username){
+        User user = userService.findUserByUsername(username);
+        return new Result(true,StatusCode.OK,"登录成功", user);
+    }
+
+    //@PreAuthorize("hasAnyAuthority('admin')")
+    @GetMapping("/all")
+    public Result findAllUser(){
+        return new Result(true,StatusCode.OK,"查询成功",userService.findAll());
+    }
+
+
+    @PutMapping("/addPoints")
+    public Result addPoints(@RequestParam("points") Integer points){
+
+        try {
+            String userName = tokenDecode.getUserInfo().get("user_name");
+            userService.addPoints(userName, points);
+          return new Result(true,StatusCode.OK,"积分增加成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+           return new Result(false,StatusCode.ERROR,"积分增加失败");
+        }
+
+    }
 
 
 }

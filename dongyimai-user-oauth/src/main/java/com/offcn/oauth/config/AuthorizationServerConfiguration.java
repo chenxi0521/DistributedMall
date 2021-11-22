@@ -18,6 +18,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.security.KeyPair;
 
 /**
@@ -38,6 +39,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     //注入认证管理器
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private DataSource dataSource;
 
 
     @Bean(name = "keyProp")
@@ -72,23 +76,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     //客户端账号配置
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        //在内存中创建账号
-        clients.inMemory()
-                // admin，授权码认证、密码认证、客户端认证、简单认证、刷新token
-                .withClient("admin")//账号名称
-                .secret(passwordEncoder.encode("admin"))//密码，要设置加密
-                .resourceIds("dongyimai-user", "dongyimai-goods")//资源编号
-                .scopes("server","app")//作用范围
-                .authorizedGrantTypes("authorization_code", "password", "refresh_token", "client_credentials","implicit")//登录授权模式
-                .redirectUris("http://localhost");//登录成功跳转地址
-        clients.and()
-                // admin，授权码认证、密码认证、客户端认证、简单认证、刷新token
-                .withClient("root")//账号名称
-                .secret(passwordEncoder.encode("root"))//密码，要设置加密
-                .resourceIds("dongyimai-user", "dongyimai-goods","dongyimai-content")//资源编号
-                .scopes("server","app")//作用范围
-                .authorizedGrantTypes("authorization_code", "password", "refresh_token", "client_credentials","implicit")//登录授权模式
-                .redirectUris("http://localhost");//登录成功跳转地址
+        clients.jdbc(dataSource)//设置数据源
+                .passwordEncoder(passwordEncoder);//设置加密方式
 
     }
 

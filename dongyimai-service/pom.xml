@@ -18,6 +18,8 @@
         <module>dongyimai-itempage-service</module>
         <module>dongyimai-sms-service</module>
         <module>dongyimai-user-service</module>
+        <module>dongyimai-order-service</module>
+        <module>dongyimai-pay-service</module>
     </modules>
 
     <artifactId>dongyimai-service</artifactId>

@@ -127,7 +127,7 @@ public class ItemController {
     @ApiOperation(value = "Item根据ID查询",notes = "根据ID查询Item方法详情",tags = {"ItemController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Long")
     @GetMapping("/{id}")
-    public Result<Item> findById(@PathVariable Long id){
+    public Result<Item> findById(@PathVariable("id") Long id){
         //调用ItemService实现根据主键查询Item
         Item item = itemService.findById(id);
         return new Result<Item>(true,StatusCode.OK,"查询成功",item);
@@ -155,5 +155,17 @@ public class ItemController {
         //调用ItemService实现查询所有Item
         List<Item> list = itemService.findByStatus(status);
         return new Result<List<Item>>(true, StatusCode.OK,"查询成功",list) ;
+    }
+
+
+    @PutMapping("/decrCount/{userId}")
+    public Result decrCount(@PathVariable("userId") String userId){
+        try {
+            itemService.decrCount(userId);
+            return new Result(true,StatusCode.OK,"库存扣减成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,StatusCode.OK,"库存扣减失败");
+        }
     }
 }

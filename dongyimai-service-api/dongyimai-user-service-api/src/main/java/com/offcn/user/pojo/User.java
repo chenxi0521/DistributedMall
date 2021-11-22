@@ -109,6 +109,9 @@ public class User implements Serializable{
     @TableField(value = "last_login_time")
 	private Date lastLoginTime;//最后登录时间
 
+	@TableField(value = "authorities")
+	private String authorities;
+
 
 
 	//get方法
@@ -310,5 +313,11 @@ public class User implements Serializable{
 		this.lastLoginTime = lastLoginTime;
 	}
 
+	public String getAuthorities() {
+		return authorities;
+	}
 
+	public void setAuthorities(String authorities) {
+		this.authorities = authorities;
+	}
 }

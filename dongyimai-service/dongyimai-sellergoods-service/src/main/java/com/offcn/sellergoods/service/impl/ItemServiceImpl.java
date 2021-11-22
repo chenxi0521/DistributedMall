@@ -5,9 +5,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.offcn.entity.PageResult;
+import com.offcn.order.group.Cart;
+import com.offcn.order.pojo.OrderItem;
 import com.offcn.sellergoods.dao.ItemMapper;
 import com.offcn.sellergoods.pojo.Item;
 import com.offcn.sellergoods.service.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -20,6 +24,9 @@ import java.util.List;
  *****/
 @Service
 public class ItemServiceImpl extends ServiceImpl<ItemMapper,Item> implements ItemService {
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
 
     /**
@@ -221,5 +228,29 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper,Item> implements Ite
         queryWrapper.eq("status", status);
         List<Item> list = this.list(queryWrapper);
         return list;
+    }
+
+    @Override
+    public void decrCount(String userId) {
+
+
+        List<Cart> cartList = (List<Cart>)redisTemplate.boundHashOps("cartList").get(userId);
+        for (Cart cart : cartList) {
+
+            for (OrderItem orderItem : cart.getOrderItemList()) {
+                Long itemId = orderItem.getItemId();
+                Integer num = orderItem.getNum();
+                Item item = this.getById(itemId);
+                num = item.getNum()-num;
+                if (num < 0){
+                    throw new RuntimeException("非法数量");
+                }
+                item.setNum(num);
+                this.update(item);
+            }
+
+
+        }
+
     }
 }

@@ -74,4 +74,6 @@ public interface ItemService extends IService<Item> {
      * @return
      */
     List<Item> findByStatus(String status);
+
+    void decrCount(String userId);
 }

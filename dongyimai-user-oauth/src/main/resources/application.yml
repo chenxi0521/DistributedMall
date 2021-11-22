@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: user-auth
+  datasource:
+    url: jdbc:mysql://192.168.1.200:33308/dongyimaidb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 111111
+    driver-class-name: com.mysql.cj.jdbc.Driver
 eureka:
   client:
     service-url:
@@ -19,3 +24,26 @@ auth:
   clientSecret: root #客户端密码
   cookieDomain: localhost #cookie域名
   cookieMaxAge: -1     #cookie有效期
+
+DYM-USER: #服务名称
+  ribbon:
+    #配置指定服务的负载均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    # Ribbon的连接超时时间
+    ConnectTimeout: 2000
+    # Ribbon的数据读取超时时间
+    ReadTimeout: 2000
+    # 是否对所有操作都进行重试
+    OkToRetryOnAllOperations: true
+    # 切换实例的重试次数
+    MaxAutoRetriesNextServer: 1
+    # 对当前实例的重试次数
+    MaxAutoRetries: 1
+#设定Hystrix熔断超时时间 ，理论上熔断时间应该大于总连接超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

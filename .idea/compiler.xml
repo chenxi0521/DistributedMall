@@ -16,15 +16,21 @@
         <module name="dongyimai-user-service-api" />
         <module name="dongyimai-user-oauth" />
         <module name="dongyimai-itempage-service" />
+        <module name="dongyimai-pay-service" />
         <module name="dongyimai-canal-service" />
         <module name="dongyimai-content-service" />
         <module name="dongyimai-search-service" />
+        <module name="dongyimai-order-service-api" />
         <module name="dongyimai-common" />
+        <module name="dongyimai-order-service" />
         <module name="dongyimai-common-db" />
         <module name="dongyimai-file-service" />
         <module name="dongyimai-content-service-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="untitled" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -39,6 +45,9 @@
       <module name="dongyimai-gateway-web" options="-parameters" />
       <module name="dongyimai-itempage-service" options="-parameters" />
       <module name="dongyimai-itempage-service-api" options="-parameters" />
+      <module name="dongyimai-order-service" options="-parameters" />
+      <module name="dongyimai-order-service-api" options="-parameters" />
+      <module name="dongyimai-pay-service" options="-parameters" />
       <module name="dongyimai-search-service" options="-parameters" />
       <module name="dongyimai-search-service-api" options="-parameters" />
       <module name="dongyimai-sellergoods-service" options="-parameters" />
@@ -50,6 +59,7 @@
       <module name="dongyimai-user-service" options="-parameters" />
       <module name="dongyimai-user-service-api" options="-parameters" />
       <module name="dongyimai-web" options="-parameters" />
+      <module name="untitled" options="-parameters" />
     </option>
   </component>
 </project>

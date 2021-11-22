@@ -265,4 +265,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return user;
     }
 
+    @Override
+    public void addPoints(String userName, Integer points) {
+        if (points < 0){
+            throw new RuntimeException("非法参数");
+        }
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("username", userName);
+        User user = this.getOne(queryWrapper);
+        if (user.getPoints() == null){
+            user.setPoints(0);
+        }
+        user.setPoints(user.getPoints() + points);
+        this.update(user);
+
+    }
+
 }
